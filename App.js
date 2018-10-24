@@ -6,6 +6,7 @@
  * @flow
  */
 
+import Location from './src/Location.js'
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
@@ -18,16 +19,42 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+
+    constructor(props) {
+      super(props);
+      this.state = {
+          latitude: undefined,
+          longitude: undefined,
+          error: undefined,
+      };
+    }
+
+    componentDidMount() {
+        Location.getCurrent().then((location) => {
+            this.setState({
+                latitude: location.latitude,
+                longitude: location.longitude,
+                error: null,
+            });
+        });
+    }
+
+    render() {
+        return (
+          <View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>Latitude: {this.state.latitude} </Text>
+            <Text>Longitude: {this.state.longitude} </Text>
+          </View>
     );
   }
 }
+
+// <View style={styles.container}>
+//   <Text style={styles.welcome}>Welcome to React Native!</Text>
+//   <Text style={styles.instructions}>To get started, edit App.js</Text>
+//   <Text style={styles.instructions}>{instructions}</Text>
+// </View>
+// {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
 
 const styles = StyleSheet.create({
   container: {
