@@ -35,5 +35,5 @@ describe("Location", () => {
             expect(location.latitude).toBeDefined();
             expect(location.longitude).toBeDefined();
         });
-    })
+    });
 });
