@@ -22,4 +22,12 @@ export default class OpenWeatherMap {
             return this.getWeatherAtLocation(location);
         });
     }
+
+    getTemperatureAtCurrentLocation() {
+        return this.getWeatherAtCurrentLocation().then((weather) => {
+            return new Promise(function (resolve) {
+                resolve(weather.main.temp);
+            });
+        })
+    }
 }

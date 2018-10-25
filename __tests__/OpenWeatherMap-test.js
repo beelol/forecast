@@ -56,15 +56,13 @@ describe("OpenWeatherMap#getWeatherAtLocation", () => {
     });
 });
 
-describe("OpenWeatherMap#getWeatherAtCurrentLocation", () => {
+describe("OpenWeatherMap#getTemperatureAtCurrentLocation", () => {
     const owm = new OpenWeatherMap();
 
-    it('retrieves the weather by current location', () => {
-        return owm.getWeatherAtCurrentLocation().then((weather) =>
+    it('retrieves the temperature by current location', () => {
+        return owm.getTemperatureAtCurrentLocation().then((temp) =>
         {
-            expect(weather).toBeDefined();
-            expect(weather).toHaveProperty('main');
-            expect(weather).toHaveProperty('main.temp');
+            expect(temp).toBeDefined();
         });
     });
 });
