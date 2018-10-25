@@ -19,7 +19,7 @@ beforeAll(() => {
 describe("OpenWeatherMap#getWeather", () => {
     const owm = new OpenWeatherMap();
 
-    it('retrieves a location from the device', () => {
+    it('retrieves the weather by longitude and latitude', () => {
         return owm.getWeather(51.1, 45.3).then((weather) =>
         {
             expect(weather).toBeDefined();
