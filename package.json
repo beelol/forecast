@@ -1,5 +1,5 @@
 {
-  "name": "TestTest",
+  "name": "Forecast",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -12,15 +12,10 @@
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0",
-    "enzyme-react-16-adapter-setup": "^0.1.0",
     "es6-promise": "^4.2.5",
     "isomorphic-fetch": "^2.2.1",
     "jest": "23.6.0",
-    "jest-enzyme": "^7.0.0",
-    "metro-react-native-babel-preset": "0.48.1",
-    "react-test-renderer": "16.6.0-alpha.8af6728"
+    "metro-react-native-babel-preset": "0.48.1"
   },
   "jest": {
     "preset": "react-native",

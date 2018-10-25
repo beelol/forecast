@@ -1,11 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
+import Temperature from './src/Temperature'
 import Location from './src/Location'
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
@@ -41,10 +34,7 @@ export default class App extends Component<Props> {
 
     render() {
         return (
-          <View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Latitude: {this.state.latitude} </Text>
-            <Text>Longitude: {this.state.longitude} </Text>
-          </View>
+          <Temperature />
     );
   }
 }
