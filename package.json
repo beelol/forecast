@@ -15,7 +15,8 @@
     "es6-promise": "^4.2.5",
     "isomorphic-fetch": "^2.2.1",
     "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.48.1"
+    "metro-react-native-babel-preset": "0.48.1",
+    "react-navigation": "^2.18.1"
   },
   "jest": {
     "preset": "react-native",

@@ -13,25 +13,6 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
-    constructor(props) {
-      super(props);
-      this.state = {
-          latitude: undefined,
-          longitude: undefined,
-          error: undefined,
-      };
-    }
-
-    componentDidMount() {
-        Location.getCurrent().then((location) => {
-            this.setState({
-                latitude: location.latitude,
-                longitude: location.longitude,
-                error: null,
-            });
-        });
-    }
-
     render() {
         return (
           <Temperature />
