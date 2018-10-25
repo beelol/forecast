@@ -34,3 +34,37 @@ describe("OpenWeatherMap#getWeather", () => {
         });
     });
 });
+
+describe("OpenWeatherMap#getWeatherAtLocation", () => {
+    const owm = new OpenWeatherMap();
+
+    var location = new Location(23, 10);
+
+    it('retrieves the weather by location', () => {
+        return owm.getWeatherAtLocation(location).then((weather) =>
+        {
+            expect(weather).toBeDefined();
+        });
+    });
+
+    it('contains the appropriate data', () => {
+        return owm.getWeatherAtLocation(location).then((weather) =>
+        {
+            expect(weather).toHaveProperty('main');
+            expect(weather).toHaveProperty('main.temp');
+        });
+    });
+});
+
+describe("OpenWeatherMap#getWeatherAtCurrentLocation", () => {
+    const owm = new OpenWeatherMap();
+
+    it('retrieves the weather by current location', () => {
+        return owm.getWeatherAtCurrentLocation().then((weather) =>
+        {
+            expect(weather).toBeDefined();
+            expect(weather).toHaveProperty('main');
+            expect(weather).toHaveProperty('main.temp');
+        });
+    });
+});

@@ -1,4 +1,5 @@
 import OWMConsts from './OWMConsts';
+import Location from './Location';
 import "isomorphic-fetch";
 
 export default class OpenWeatherMap {
@@ -9,6 +10,16 @@ export default class OpenWeatherMap {
             return new Promise(function (resolve) {
                 resolve(response.json());
             });
+        });
+    }
+
+    getWeatherAtLocation(location) {
+        return this.getWeather(location.latitude, location.longitude);
+    }
+
+    getWeatherAtCurrentLocation() {
+        return Location.getCurrent().then((location) => {
+            return this.getWeatherAtLocation(location);
         });
     }
 }
