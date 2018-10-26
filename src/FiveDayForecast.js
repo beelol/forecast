@@ -34,7 +34,7 @@ export default class FiveDayForecast extends Component {
 
         return (
           <View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>FIVE-DAY FORECAST{`\n`}</Text>
+            <Text style={{fontSize: 20}}>FIVE-DAY FORECAST{`\n`}</Text>
             <Text>{listItems}</Text>
           </View>
     );

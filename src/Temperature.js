@@ -23,7 +23,7 @@ export default class Temperature extends Component {
     render() {
         return (
           <View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>{'It\'s'} {this.state.temp}° outside! </Text>
+            <Text style={{fontSize: 20}}>{'It\'s'} {this.state.temp}° outside! </Text>
           </View>
     );
     }
