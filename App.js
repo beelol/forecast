@@ -5,6 +5,8 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import OpenWeatherMap from './src/OpenWeatherMap';
 import {TabNavigator} from 'react-navigation';
 
+console.disableYellowBox = true;
+
 export default TabNavigator({
     TODAY: Temperature,
     'FIVE-DAY': FiveDayForecast
