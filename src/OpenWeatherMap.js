@@ -67,4 +67,8 @@ export default class OpenWeatherMap {
             });
         })
     }
+
+    getIconUrl(name) {
+        return `${OWMConsts.APIIconRoot}${name}.png`;
+    }
 }

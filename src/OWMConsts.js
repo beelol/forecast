@@ -10,4 +10,8 @@ export default class OWMConsts {
     static get APIForecastRoot() {
         return "http://api.openweathermap.org/data/2.5/forecast?";
     }
+
+    static get APIIconRoot() {
+        return "http://openweathermap.org/img/w/";
+    }
 }
