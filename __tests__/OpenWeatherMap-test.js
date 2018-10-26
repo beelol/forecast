@@ -66,3 +66,16 @@ describe("OpenWeatherMap#getTemperatureAtCurrentLocation", () => {
         });
     });
 });
+
+describe("OpenWeatherMap#getForecast", () => {
+    const owm = new OpenWeatherMap();
+
+    it('retrieves the forecast by latitude & longitude', () => {
+        return owm.getForecast(51.1, 45.3).then((response) =>
+        {
+            expect(response).toBeDefined();
+            expect(response.list).toBeDefined();
+            expect(response.list.length).toBeGreaterThanOrEqual(30);
+        });
+    });
+});

@@ -3,6 +3,16 @@ import Location from './Location';
 import "isomorphic-fetch";
 
 export default class OpenWeatherMap {
+    getForecast(latitude, longitude) {
+        let url = `${OWMConsts.APIForecastRoot}lat=${latitude}&lon=${longitude}&appid=${OWMConsts.key}&units=imperial`;
+
+        return fetch(url).then((response) => {
+            return new Promise(function (resolve) {
+                resolve(response.json());
+            });
+        });
+    }
+
     getWeather(latitude, longitude) {
         let url = `${OWMConsts.APIRoot}lat=${latitude}&lon=${longitude}&appid=${OWMConsts.key}&units=imperial`;
 

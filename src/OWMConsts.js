@@ -6,4 +6,8 @@ export default class OWMConsts {
     static get APIRoot() {
         return "http://api.openweathermap.org/data/2.5/weather?";
     }
+
+    static get APIForecastRoot() {
+        return "http://api.openweathermap.org/data/2.5/forecast?";
+    }
 }
