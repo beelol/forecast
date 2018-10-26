@@ -1,6 +1,6 @@
 import OWMConsts from './OWMConsts';
 import Location from './Location';
-import "isomorphic-fetch";
+import { fetch as fetchPolyfill } from 'whatwg-fetch';
 
 export default class OpenWeatherMap {
 

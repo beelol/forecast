@@ -13,7 +13,7 @@
   "devDependencies": {
     "babel-jest": "23.6.0",
     "es6-promise": "^4.2.5",
-    "isomorphic-fetch": "^2.2.1",
+    "whatwg-fetch": "^2.0.4",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.48.1",
     "react-navigation": "^2.18.1"
