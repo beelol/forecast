@@ -1,6 +1,7 @@
 import React from 'react';
 import Location from '../src/Location';
 import OpenWeatherMap from '../src/OpenWeatherMap';
+import 'isomorphic-fetch';
 
 beforeAll(() => {
     const mockGeolocation = {
