@@ -6,24 +6,27 @@ export default class FiveDayForecast extends Component {
     constructor(props) {
       super(props);
       this.state = {
-          temp: undefined
+          fiveDayForecast: []
       };
     }
 
     componentDidMount() {
         let owm = new OpenWeatherMap();
 
-        owm.getTemperatureAtCurrentLocation().then((temp) => {
+        owm.getFiveForecastObjectsAtCurrentLocation().then((fiveDayForecast) => {
             this.setState({
-                temp: temp
+                fiveDayForecast: fiveDayForecast
             });
         });
     }
 
     render() {
+        var forecast = this.state.fiveDayForecast;
+        const listItems = forecast.map((weather) => <Text key={weather.main.temp}>High: {weather.main.temp_max} Low: {weather.main.temp_min}</Text>);
+
         return (
           <View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>{'It\'s'} {this.state.temp}° outside! </Text>
+            <Text>{listItems}</Text>
           </View>
     );
     }
